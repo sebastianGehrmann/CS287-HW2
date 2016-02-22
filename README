@@ -1,0 +1,7 @@
+How to use the code:
+
+1) Copy the data into this folder
+2) preprocess the data by calling preprocess.py - The call should look like this: “python preprocess.py PTB 5 100000” this replicates the data from “NLP (almost) from Scratch”. The first argument is the data, the second the window size and the third the max. size of the vocab.
+3) Call HW2.lua to train. The model from the paper can be trained by calling: “HW2.lua -classifier nn -hiddenUnits 300 -epochs 20 -learningrate 0.02 -capEmbeddingSize 10 -useEmbeddings true -predictTest true”
+This selects the neural network as classifier, specifies 300 hidden units and 20 epochs, a learning rate of .02, the capitalization embedding as 10 and uses the precomputed embeddings. The predictTest flag additionally stores the output in the predictions directory
+4) Due to the save function in lua, the predictions have to be processed to fit the kaggle format. To do this, call csvformat.py without arguments.
